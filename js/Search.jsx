@@ -2,6 +2,9 @@ const React = require('react');
 const ShowCard = require('./ShowCard');
 const Header = require('./Header');
 
+/**
+ * Component to implement search functionality for movies
+ */
 class Search extends React.Component {
 	
 	constructor(props) {
@@ -14,10 +17,17 @@ class Search extends React.Component {
 		this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
 	}
 	
+	/**
+	 * Event handler triggers when user changes text in the search box, it is taken from Header
+	 */
 	handleSearchTermChange (event) {
 		this.setState({ searchTerm: event.target.value })
 	}
 	
+	/**
+	 * Returns all shows whose title matches what the user searched.
+	 * Shows are then clickable, which will allow the user to see the details of each show.
+	 */
 	render() {
 		return (
 			<div className='container'>

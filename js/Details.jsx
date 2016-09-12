@@ -1,6 +1,9 @@
 const React = require('react');
 const Header = require('./Header');
 
+/**
+ * Component for displaying the details of a movie (ES6 syntax)
+ */
 class Details extends React.Component {
 	render() {
 		const params = this.props.params || {};

@@ -2,6 +2,10 @@ const React = require('react');
 const ReactRouter = require('react-router');
 const {Link, hashHistory} = ReactRouter;
 
+/**
+ * Component that describes the home page for the app (ES6 syntax).
+ * It is a stateless component.
+ */
 class Landing extends React.Component {
 	render() {
 		return (

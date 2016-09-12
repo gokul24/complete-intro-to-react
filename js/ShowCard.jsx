@@ -2,6 +2,10 @@ const React = require('react');
 const ReactRouter = require('react-router');
 const { Link } = ReactRouter;
 
+/**
+ * Component which displays the search results pertaining to the query that the user searches.
+ * Links to the details page for that particular movie.
+ */
 const ShowCard = (props) => (
 	<Link to={`/details/${props.id}`}>
 		<div className='show-card'>

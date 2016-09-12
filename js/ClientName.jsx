@@ -10,7 +10,20 @@ const {Router, Route, hashHistory, IndexRoute} = ReactRouter;
 
 //var MyTitle = require('./MyTitle');
 
+/**
+ * The root component of the application.
+ * 
+ * Uses ES6 syntax to create React component.
+*/
 class App extends React.Component {
+
+	/**
+	 * onEnter handler that is called when user wants to go to details route, gets information for the correct show based on user's request
+	 * This is how parameters are handled in react-router, by a function which takes in the nextState and replace.
+	 * 
+	 * @param nextState The next router state
+	 * @param replace Function that redirects to the next path
+	 */
 	assignShow(nextState, replace) {
 		const show = data.shows[nextState.params.id];
 		if (!show) {
@@ -26,6 +39,13 @@ class App extends React.Component {
 		this.assignShow = this.assignShow.bind(this);
 	}
 	
+	/** 
+	 * React element which lays out the routes in the application.
+	 * Layout is the background which will be in all pages in the app.
+	 * Landing is the start page.
+	 * /search describes the search page where user can search for movie titles.
+	 * /details describes the details page where user selects a movie title after searching for it.
+	 */
 	render() {
 		return (
 			<Router history={hashHistory}>
